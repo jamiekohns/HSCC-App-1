@@ -4,14 +4,14 @@ require_once 'config.php';
 
 
     $query = $db->query(
-'SELECT 
-        * 
-      FROM 
-        `movies` 
-      WHERE 
-        `year` = 2000 
-        AND `rank` IS NOT NULL 
-      ORDER BY `rank` DESC 
+    'SELECT 
+        *
+      FROM
+        `movies`
+      WHERE
+        `year` = 2000
+        AND `rank` IS NOT NULL
+      ORDER BY `rank` DESC
       LIMIT 10'
     );
 
@@ -66,14 +66,14 @@ require_once 'config.php';
             <hr>
             <?php
                 $query = $db->query(
-                    'SELECT 
-                    * 
-                    FROM 
-                    `movies` 
-                    WHERE 
-                    `year` = 1986 
-                    AND `rank` IS NOT NULL 
-                    ORDER BY `rank` DESC 
+                    'SELECT
+                    *
+                    FROM
+                    `movies`
+                    WHERE
+                    `year` = 1986
+                    AND `rank` IS NOT NULL
+                    ORDER BY `rank` DESC
                     LIMIT 10'
                 );
 
