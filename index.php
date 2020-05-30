@@ -22,7 +22,6 @@ $topTen = $query->fetchAll(PDO::FETCH_ASSOC);
     <head>
         <title>IMDB Access</title>
 
-
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
 
@@ -96,7 +95,11 @@ $topTen = $query->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($topTen as $movie) :
                         ?>
                             <tr>
-                                <td><?=$movie['id']?></td>
+                                <td>
+                                  <a href="movie.php?id=<?=$movie['id']?>">
+                                    <?=$movie['id']?>
+                                  </a>
+                                </td>
                                 <td><?=$movie['name']?></td>
                                 <td><?=$movie['year']?></td>
                                 <td><?=$movie['rank']?></td>
