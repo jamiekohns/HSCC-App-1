@@ -2,21 +2,19 @@
 
 require_once 'config.php';
 
+$query = $db->query(
+'SELECT
+    *
+  FROM
+    `movies`
+  WHERE
+    `year` = 2000
+    AND `rank` IS NOT NULL
+  ORDER BY `rank` DESC
+  LIMIT 10'
+);
 
-    $query = $db->query(
-    'SELECT 
-        *
-      FROM
-        `movies`
-      WHERE
-        `year` = 2000
-        AND `rank` IS NOT NULL
-      ORDER BY `rank` DESC
-      LIMIT 10'
-    );
-
-    $topTen = $query->fetchAll(PDO::FETCH_ASSOC);
-
+$topTen = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
